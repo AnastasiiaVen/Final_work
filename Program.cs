@@ -3,21 +3,16 @@
 либо задать на старте выполнения алгоритма. При решении не рекомендуется пользоваться коллекциями, 
 лучше обойтись исключительно массивами.*/
 
-int SelectStringsSizeLess4(string[] firstArray)
+string[] CreateArrayStringsSizeLess4 (string[] enteredArray)
 {
-    int sizeSecondArray = 0;
-    for (int i = 0; i < firstArray.Length; i++)
+    int sizeResultArray = 0;
+    for (int i = 0; i < enteredArray.Length; i++)
     {
-        if (firstArray[i].Length < 4)
+        if (enteredArray[i].Length < 4)
         {
-            sizeSecondArray++;
+            sizeResultArray++;
         }
     }
-    return sizeSecondArray;
-}
-
-string[] CreateArrayStringsSizeLess4 (string[] enteredArray, int sizeResultArray)
-{
     string[] arrayStringsSizeLess4 = new string[sizeResultArray];
     int j = 0;
     for (int i = 0; i < enteredArray.Length; i++)
@@ -31,25 +26,25 @@ string[] CreateArrayStringsSizeLess4 (string[] enteredArray, int sizeResultArray
     return arrayStringsSizeLess4;
 }
 
-void ShowArrayStringsSizeLess4 (string[] stringArray)
+
+void ShowArray(string[] stringArray)
 {
     Console.Write("[");
     for (int i = 0; i < stringArray.Length; i++)
     {
-        Console.Write ($"\"{stringArray[i]}\"");
-        if (i < stringArray.Length-1)
+        Console.Write($"\"{stringArray[i]}\"");
+        if (i < stringArray.Length - 1)
         {
-           Console.Write(", "); 
+            Console.Write(", ");
         }
     }
     Console.Write("]");
 }
 
 Console.Clear();
-string[] stringArray = { "hello", "2", "world", ":-)"};
-int sizeFinalArray = SelectStringsSizeLess4(stringArray);
-string[] finalArray = CreateArrayStringsSizeLess4(stringArray, sizeFinalArray);
-ShowArrayStringsSizeLess4(stringArray);
+string[] stringArray = { "Russia", "Denmark", "Kazan" };
+string[] finalArray = CreateArrayStringsSizeLess4(stringArray);
+ShowArray(stringArray);
 Console.Write(" -> ");
-ShowArrayStringsSizeLess4(finalArray);
+ShowArray(finalArray);
 
